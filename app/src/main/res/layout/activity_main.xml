@@ -7,12 +7,48 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="600dp"
+        android:text="Click a Button"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/readBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="197dp"
+        android:hint="Read"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/writeBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+
+    <Button
+        android:id="@+id/writeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="197dp"
+        android:hint="Write"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/readBtn"
+        app:layout_constraintTop_toBottomOf="@+id/txtView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
