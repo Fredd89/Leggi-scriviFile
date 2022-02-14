@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String str = manageFile.readFile(fileName.getText().toString(), getApplicationContext());
-                Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
-                /*Intent intent = new Intent(MainActivity.this, ReadFile_activity.class);
+                //Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ReadFile_activity.class);
                 intent.putExtra("str", str);
-                startActivity(intent);*/
+                startActivity(intent);
             }
         });
 
