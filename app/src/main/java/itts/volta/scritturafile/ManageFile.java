@@ -25,27 +25,27 @@ import java.nio.charset.StandardCharsets;
                 }
             }
             catch(FileNotFoundException e){
-                Log.e("!ifFileExists", "Il file non esiste");
+                Log.e("!ifFileExists", "File does not exists");
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             return strB.toString();
 
         }
 
-        public String writeFile(String fileName, Context c) {
+        public String writeFile(String fileName, String str, Context c) {
 
             String result = "";
             FileOutputStream file;
-            String str = "Text to write into the file";
 
             try
             {
                 file = c.openFileOutput(fileName, Context.MODE_PRIVATE);
                 file.write(str.getBytes());
                 file.close();
-                result = "File letto correttamente";
+                result = "File correctly written";
             }
 
             catch (FileNotFoundException e) {

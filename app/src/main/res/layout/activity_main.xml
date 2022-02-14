@@ -6,49 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="151dp"
-        android:layout_marginBottom="600dp"
-        android:text="Click a Button"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/readBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="197dp"
+        android:backgroundTint="#686868"
         android:hint="Read"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/writeBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxt2" />
 
     <Button
         android:id="@+id/writeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="197dp"
+        android:backgroundTint="#686868"
         android:hint="Write"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/readBtn"
-        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+        app:layout_constraintTop_toBottomOf="@+id/editTxt2" />
+
+    <EditText
+        android:id="@+id/editTxt"
+        android:layout_width="265dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="26dp"
+        android:background="@null"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Type in the file name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/editTxt2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTxt2"
+        android:layout_width="331dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="282dp"
+        android:ems="10"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="Type in the text to write into the file"
+        android:inputType="textPersonName"
+        android:textAlignment="gravity"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
