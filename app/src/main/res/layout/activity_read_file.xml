@@ -7,24 +7,45 @@
     tools:context=".ReadFile_activity">
 
     <EditText
-        android:id="@+id/fileTxt"
+        android:id="@+id/fileName"
         android:layout_width="298dp"
-        android:layout_height="454dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="222dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
         android:background="@null"
         android:ems="10"
         android:gravity="center"
+        android:hint="No file name entered"
+        android:inputType="textPersonName"
+        android:textColorHint="#757575"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/fileTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fileTxt"
+        android:layout_width="298dp"
+        android:layout_height="454dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
+        android:autofillHints=""
+        android:background="@null"
+        android:ems="10"
+        android:gravity="top"
         android:hint="No text entered"
         android:inputType="textPersonName"
-        android:textAlignment="center"
         android:textColor="#000000"
         android:textColorHint="#757575"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/fileName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

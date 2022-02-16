@@ -17,7 +17,7 @@ public class ReadFile_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_file);
 
-        fileTxt = (EditText) findViewById(R.id.fileTxt);
+        fileTxt = findViewById(R.id.fileTxt);
 
         Intent intent = getIntent();
         String str = intent.getStringExtra("str");
