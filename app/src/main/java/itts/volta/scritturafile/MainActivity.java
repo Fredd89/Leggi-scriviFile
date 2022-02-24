@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         readBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String str = manageFile.readFile(fileName.getText().toString(), getApplicationContext());
-                //Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+                String fileText = manageFile.readFile(fileName.getText().toString(), getApplicationContext());
                 Intent intent = new Intent(MainActivity.this, ReadFile_activity.class);
-                intent.putExtra("str", str);
+                intent.putExtra("fileText", fileText);
+                intent.putExtra("fileName", fileName.getText().toString());
                 startActivity(intent);
             }
         });

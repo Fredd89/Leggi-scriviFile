@@ -10,17 +10,20 @@ import android.widget.Toast;
 
 public class ReadFile_activity extends AppCompatActivity {
 
-    EditText fileTxt;
+    EditText fileN, fileTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read_file);
 
+        fileN = findViewById(R.id.fileName);
         fileTxt = findViewById(R.id.fileTxt);
 
         Intent intent = getIntent();
-        String str = intent.getStringExtra("str");
-        fileTxt.setText(str);
+        String fileName = intent.getStringExtra("fileName");
+        String fileText = intent.getStringExtra("fileText");
+        fileN.setText(fileName);
+        fileTxt.setText(fileText);
     }
 }
