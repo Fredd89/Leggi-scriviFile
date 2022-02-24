@@ -1,12 +1,15 @@
 package itts.volta.scritturafile;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
@@ -61,4 +64,27 @@ import java.nio.charset.StandardCharsets;
             }
             return result;
         }
+
+        public String readFileRow(Context c) {
+            String str = "";
+            Resources res = c.getResources();
+            InputStream is = res.openRawResource(R.raw.song);
+
+            return str;
+        }
+
+        public String readFileAssets(Context c) {
+            String str = "";
+            AssetManager am = c.getAssets();
+
+            try {
+                InputStream is = am.open("song.txt");
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return str;
+        }
+
 }
