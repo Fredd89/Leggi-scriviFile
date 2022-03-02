@@ -11,13 +11,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 
     public class ManageFile {
 
         public String readFile(String fileName, Context c) {
 
-            BufferedReader fileIn = null;
+            BufferedReader fileIn;
             String outputFile;
             StringBuilder strB = new StringBuilder();
 
@@ -65,26 +64,49 @@ import java.nio.charset.StandardCharsets;
             return result;
         }
 
-        public String readFileRow(Context c) {
-            String str = "";
+        public String readRawFile(Context c) {
+            BufferedReader fileIn;
             Resources res = c.getResources();
-            InputStream is = res.openRawResource(R.raw.song);
-
-            return str;
-        }
-
-        public String readFileAssets(Context c) {
-            String str = "";
-            AssetManager am = c.getAssets();
+            String outputFile = "";
+            StringBuilder strB = new StringBuilder();
 
             try {
-                InputStream is = am.open("song.txt");
+                InputStream is = res.openRawResource(R.raw.song);
+                fileIn = new BufferedReader(new InputStreamReader(is));
+                while ((outputFile = fileIn.readLine()) != null) {
+                    strB.append(outputFile + "\n");
+                }
+            }
+            catch (FileNotFoundException e) {
+                Log.e("!ifFileExists", "File in Raw folder does not exists");
             }
             catch (IOException e) {
                 e.printStackTrace();
             }
 
-            return str;
+            return strB.toString();
         }
 
+        public String readAssetsFile(Context c) {
+            BufferedReader fileIn;
+            String outputFile = "";
+            AssetManager am = c.getAssets();
+            StringBuilder strB = new StringBuilder();
+
+            try {
+                InputStream is = am.open("song.txt");
+                fileIn = new BufferedReader(new InputStreamReader(is));
+                while ((outputFile = fileIn.readLine()) != null) {
+                    strB.append(outputFile + "\n");
+                }
+            }
+            catch (FileNotFoundException e) {
+                Log.e("!ifFileExists", "File in Assets folder does not exists");
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return strB.toString();
+        }
 }
